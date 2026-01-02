@@ -136,6 +136,26 @@ body {
     color: var(--miguel);
 }
 
+.location-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.5rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    text-decoration: none;
+    transition: all 0.15s;
+}
+
+.location-link:hover {
+    background: var(--border);
+    color: var(--text);
+}
+
 .legend {
     display: flex;
     gap: 0.25rem;
@@ -578,6 +598,7 @@ body {
 
     .header-actions,
     .header-btn,
+    .location-link,
     .tooltip,
     .modal-overlay {
         display: none !important;
