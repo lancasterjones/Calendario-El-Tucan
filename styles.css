@@ -566,9 +566,14 @@ body {
     .header {
         position: static !important;
         background: white !important;
-        border-bottom: 2px solid #333 !important;
-        padding: 0.5rem 0 !important;
-        margin-bottom: 0.5rem !important;
+        border-bottom: 1px solid #999 !important;
+        padding: 0.15rem 0 !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    .header-content {
+        margin-bottom: 0 !important;
+        gap: 0.5rem !important;
     }
 
     .header-actions,
@@ -578,9 +583,13 @@ body {
         display: none !important;
     }
 
+    .logo-icon {
+        font-size: 1rem !important;
+    }
+
     .logo h1 {
         color: #1a1a1a !important;
-        font-size: 1.5rem !important;
+        font-size: 0.9rem !important;
     }
 
     .logo .year {
@@ -588,7 +597,8 @@ body {
     }
 
     .filter-row {
-        justify-content: center !important;
+        justify-content: flex-end !important;
+        margin-top: -1.5rem !important;
     }
 
     .legend {
@@ -597,13 +607,19 @@ body {
 
     .stats-bar {
         color: #1a1a1a !important;
-        font-size: 0.7rem !important;
-        justify-content: center !important;
-        gap: 1.5rem !important;
+        font-size: 0.6rem !important;
+        justify-content: flex-end !important;
+        gap: 0.75rem !important;
     }
 
     .stat-item {
         color: #1a1a1a !important;
+        gap: 0.2rem !important;
+    }
+
+    .stat-item .dot {
+        width: 6px !important;
+        height: 6px !important;
     }
 
     .main {
