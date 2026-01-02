@@ -1,0 +1,545 @@
+:root {
+    --bg: #0f172a;
+    --bg-card: #1e293b;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    /* Real colors as specified */
+    --pedro: #3b82f6;
+    /* Azul */
+    --carmina: #eab308;
+    /* Amarillo */
+    --miguel: #22c55e;
+    /* Verde */
+    --rocio: #ec4899;
+    /* Rosa */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: var(--bg-card);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header-btn {
+    padding: 0.5rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+
+.header-btn:hover {
+    background: var(--border);
+    color: var(--text);
+}
+
+.filter-row {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.stats-bar {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.stat-item .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.stat-item.highlight {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.logo h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.logo .year {
+    color: var(--miguel);
+}
+
+.legend {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+
+.legend-item:hover {
+    border-color: var(--text-muted);
+    color: var(--text);
+}
+
+.legend-item.active {
+    background: var(--bg);
+    border-color: var(--text);
+    color: var(--text);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.pedro {
+    background: var(--pedro);
+}
+
+.dot.carmina {
+    background: var(--carmina);
+}
+
+.dot.miguel {
+    background: var(--miguel);
+}
+
+.dot.rocio {
+    background: var(--rocio);
+}
+
+/* Main */
+.main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 1200px) {
+    .calendar-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .calendar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .calendar-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Month Card */
+.month-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+.month-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+/* Calendar Days Grid */
+.days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin-bottom: 4px;
+}
+
+.day-label {
+    font-size: 0.625rem;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 2px;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.day-cell {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+}
+
+.day-cell.empty {
+    cursor: default;
+}
+
+.day-cell:not(.empty):hover {
+    transform: scale(1.15);
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.day-cell.current {
+    outline: 2px solid white;
+    outline-offset: 1px;
+    z-index: 5;
+}
+
+.day-cell.dimmed {
+    opacity: 0.15;
+}
+
+/* Person colors */
+.day-cell.pedro {
+    background: var(--pedro);
+    color: white;
+}
+
+.day-cell.carmina {
+    background: var(--carmina);
+    color: #1a1a1a;
+}
+
+.day-cell.miguel {
+    background: var(--miguel);
+    color: white;
+}
+
+.day-cell.rocio {
+    background: var(--rocio);
+    color: white;
+}
+
+/* Holiday star indicator */
+.day-cell.has-holiday {
+    overflow: visible;
+}
+
+.holiday-star {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    font-size: 0.45rem;
+    line-height: 1;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+}
+
+/* Tooltip */
+.tooltip {
+    position: fixed;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s;
+    min-width: 180px;
+    max-width: 220px;
+    pointer-events: none;
+}
+
+.tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.tooltip-header {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.tooltip-dates {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.tooltip-note {
+    font-size: 0.6875rem;
+    color: var(--rocio);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.tooltip-note:empty {
+    display: none;
+}
+
+.tooltip-btn {
+    width: 100%;
+    padding: 0.375rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 0.6875rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+
+.tooltip-btn:hover {
+    background: var(--border);
+    color: var(--text);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.25rem;
+    max-width: 300px;
+    width: 90%;
+    border: 1px solid var(--border);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.modal-header h3 {
+    font-size: 1rem;
+}
+
+.modal-close {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-info {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.modal-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cal-btn {
+    display: block;
+    padding: 0.625rem;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.15s;
+}
+
+.cal-btn.google {
+    background: #4285f4;
+    color: white;
+}
+
+.cal-btn.apple {
+    background: #333;
+    color: white;
+}
+
+.cal-btn.outlook {
+    background: #0078d4;
+    color: white;
+}
+
+.cal-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Wide modal for holidays list */
+.modal.modal-wide {
+    max-width: 500px;
+}
+
+.holidays-list {
+    max-height: 60vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.holiday-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--bg);
+    border-radius: 6px;
+    font-size: 0.8125rem;
+}
+
+.holiday-row .date {
+    min-width: 60px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.holiday-row .name {
+    flex: 1;
+}
+
+.holiday-row .person-tag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 99px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: white;
+}
+
+.holiday-row .person-tag.pedro {
+    background: var(--pedro);
+}
+
+.holiday-row .person-tag.carmina {
+    background: var(--carmina);
+    color: #1a1a1a;
+}
+
+.holiday-row .person-tag.miguel {
+    background: var(--miguel);
+}
+
+.holiday-row .person-tag.rocio {
+    background: var(--rocio);
+}
