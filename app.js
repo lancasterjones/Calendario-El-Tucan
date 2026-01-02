@@ -554,6 +554,18 @@ document.getElementById('holidaysModal').addEventListener('click', e => {
     if (e.target.id === 'holidaysModal') e.target.classList.remove('active');
 });
 
+// Print button
+document.getElementById('printBtn').addEventListener('click', () => {
+    // Reset any filters before printing
+    document.querySelectorAll('.day-cell').forEach(cell => cell.classList.remove('dimmed'));
+    document.querySelectorAll('.legend-item').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-filter="all"]').classList.add('active');
+    updateStatsDisplay('all');
+
+    // Small delay to ensure DOM updates, then print
+    setTimeout(() => window.print(), 100);
+});
+
 // Init
 buildCalendar();
 setupTooltip();
