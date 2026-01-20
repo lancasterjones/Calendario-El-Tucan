@@ -193,7 +193,7 @@ const schedule = [
     { start: [2026, 9, 28], end: [2026, 10, 3], person: 'carmina' },
 
     // Noviembre
-    { start: [2026, 10, 4], end: [2026, 10, 10], person: 'rocio' },
+    { start: [2026, 10, 4], end: [2026, 10, 10], person: 'miguel' },
     { start: [2026, 10, 11], end: [2026, 10, 17], person: 'miguel', note: 'Incluye Puente 16 Nov (Revolución)' },
     { start: [2026, 10, 18], end: [2026, 10, 24], person: 'rocio' },
     { start: [2026, 10, 25], end: [2026, 11, 1], person: 'pedro' },
