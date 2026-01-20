@@ -564,6 +564,15 @@ body {
     background: var(--rocio);
 }
 
+/* Version Footer */
+.version-footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
 /* Print Styles */
 @media print {
     @page {
